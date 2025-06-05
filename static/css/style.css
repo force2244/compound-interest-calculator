@@ -45,6 +45,15 @@ body {
 .form-check-label {
     cursor: pointer;
     user-select: none;
+    color: white !important;
+}
+
+/* Center radio buttons and calculate text */
+.radio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 /* Input group styling */
@@ -217,7 +226,7 @@ code {
 /* Form label improvements */
 .form-label {
     margin-bottom: 0.5rem;
-    color: var(--bs-gray-700);
+    color: white !important;
 }
 
 .fw-semibold {
