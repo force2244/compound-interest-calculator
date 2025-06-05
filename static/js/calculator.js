@@ -76,7 +76,7 @@ class CompoundInterestCalculator {
         if (selectedInput) {
             selectedInput.disabled = true;
             selectedInput.classList.add('bg-light');
-            selectedInput.value = ''; // Clear the field that will be calculated
+            // Don't clear the field value - keep calculated results visible
         }
     }
 
@@ -206,10 +206,16 @@ class CompoundInterestCalculator {
     displayResult(field, result) {
         const input = this.fieldMap[field];
         if (input) {
-            // Round to 2 decimal places
-            input.value = result.toFixed(2);
+            // Round based on field type
+            if (field === 'principal' || field === 'futureValue') {
+                input.value = Math.round(result).toString(); // No decimal places for monetary values
+            } else if (field === 'rate') {
+                input.value = result.toFixed(2); // 2 decimal places for percentage
+            } else if (field === 'years') {
+                input.value = result.toFixed(1); // 1 decimal place for years
+            }
             
-            // Add visual feedback
+            // Add visual feedback but keep value visible
             input.classList.add('fw-bold', 'text-success');
             setTimeout(() => {
                 input.classList.remove('fw-bold', 'text-success');
