@@ -1,0 +1,231 @@
+/**
+ * Custom styles for Compound Interest Calculator
+ * Enhances Bootstrap styling with specific improvements
+ */
+
+:root {
+    --calculator-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    --calculator-border-radius: 0.5rem;
+}
+
+/* Body and general styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Card enhancements */
+.card {
+    border-radius: var(--calculator-border-radius);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--calculator-shadow);
+}
+
+/* Form styling improvements */
+.form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.form-control:disabled {
+    background-color: var(--bs-light);
+    opacity: 0.8;
+}
+
+/* Radio button enhancements */
+.form-check-input:checked {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.form-check-label {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Input group styling */
+.input-group-text {
+    font-weight: 500;
+}
+
+/* Button enhancements */
+.btn {
+    border-radius: var(--calculator-border-radius);
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* Alert styling */
+.alert {
+    border-radius: var(--calculator-border-radius);
+    border: none;
+    font-weight: 500;
+}
+
+.alert-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+.alert-success {
+    background-color: rgba(25, 135, 84, 0.1);
+    color: #198754;
+}
+
+/* Icon enhancements */
+.fa-3x {
+    font-size: 3rem;
+}
+
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+.text-success {
+    color: var(--bs-success) !important;
+}
+
+.text-info {
+    color: var(--bs-info) !important;
+}
+
+.text-warning {
+    color: var(--bs-warning) !important;
+}
+
+/* Formula reference styling */
+code {
+    background-color: var(--bs-gray-100);
+    color: var(--bs-gray-800);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .fa-3x {
+        font-size: 2rem;
+    }
+    
+    .col-md-2 {
+        margin-bottom: 0.5rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .btn-lg {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+    }
+}
+
+/* Animation for result display */
+@keyframes resultHighlight {
+    0% {
+        background-color: rgba(25, 135, 84, 0.2);
+        transform: scale(1);
+    }
+    50% {
+        background-color: rgba(25, 135, 84, 0.3);
+        transform: scale(1.02);
+    }
+    100% {
+        background-color: transparent;
+        transform: scale(1);
+    }
+}
+
+.form-control.fw-bold.text-success {
+    animation: resultHighlight 1s ease-in-out;
+}
+
+/* Loading state for button */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Enhanced focus states for accessibility */
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+/* Header styling */
+.display-4 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.lead {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* Card header styling */
+.card-header {
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Form label improvements */
+.form-label {
+    margin-bottom: 0.5rem;
+    color: var(--bs-gray-700);
+}
+
+.fw-semibold {
+    font-weight: 600;
+}
+
+/* Small text styling */
+small.text-muted {
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
